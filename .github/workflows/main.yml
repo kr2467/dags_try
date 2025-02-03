@@ -28,6 +28,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
     
+    - name: Install Astro CLI
+      run: |
+        curl -sSL https://install.astronomer.io | sudo bash -s
+        sudo ln -s /usr/local/bin/astro /usr/bin/astro
+        
     - name: Authenticate with Astronomer
       run: |
         echo ${{ env.ASTRO_API_TOKEN }} | astro login --token
