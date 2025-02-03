@@ -35,7 +35,7 @@ jobs:
         
     - name: Authenticate with Astronomer
       run: |
-        echo ${{ env.ASTRO_API_TOKEN }} | astro login --token-login
+        astro login --token-login ${{ env.ASTRO_API_TOKEN }}
         
     - name: Deploy to Astro
       uses: astronomer/deploy-action@v0.4
